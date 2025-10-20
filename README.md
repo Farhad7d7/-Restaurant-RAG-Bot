@@ -21,7 +21,7 @@ Minimal HTML UI (no Gradio), FastAPI backend, and a tiny sample menu (Persian).
 
 ### 1) Clone + Setup
 ```bash
-git clone <your-repo-url>.git
+git clone https://github.com/Farhad7d7/-Restaurant-RAG-Bot.git
 cd restaurant-bot-public
 python -m venv .venv
 # Windows:
