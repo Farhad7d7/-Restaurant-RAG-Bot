@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>🍽️ چت‌بات رستورانی (RAG)</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 32px auto; padding: 0 16px; }
+    textarea, input { width: 100%; font-size: 16px; }
+    .box { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; }
+    button { padding: 10px 16px; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; }
+    .row { display: flex; gap: 12px; align-items: center; }
+    .row input { flex: 1; }
+    .muted { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h2>🍽️ چت‌بات رستورانی (RAG)</h2>
+  <div class="box">
+    <label>سؤال شما دربارهٔ منو</label>
+    <input id="q" placeholder="مثلاً: غذای بدون گلوتن دارید؟">
+    <div style="margin-top:10px">
+      <button onclick="ask()">بپرس</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>پاسخ</h3>
+    <div id="answer" class="muted">—</div>
+  </div>
+
+  <div class="box">
+    <h3>Context</h3>
+    <pre id="ctx" class="muted" style="white-space:pre-wrap">—</pre>
+  </div>
+
+  <script>
+    const API = "http://localhost:8000";
+    async function ask() {
+      const q = document.getElementById('q').value.trim();
+      if (!q) return;
+      document.getElementById('answer').textContent = "در حال پرس‌وجو...";
+      document.getElementById('ctx').textContent = "";
+      try {
+        const r = await fetch(`${API}/ask`, {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({query: q})
+        });
+        const j = await r.json();
+        document.getElementById('answer').textContent = j.answer || "(پاسخی دریافت نشد)";
+        document.getElementById('ctx').textContent = j.context || "";
+      } catch (e) {
+        document.getElementById('answer').textContent = "خطا در ارتباط با API";
+        console.error(e);
+      }
+    }
+  </script>
+</body>
+</html>

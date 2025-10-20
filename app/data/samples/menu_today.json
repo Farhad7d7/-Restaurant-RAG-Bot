@@ -1,0 +1,55 @@
+{
+  "date": "2025-10-20",
+  "currency": "IRR",
+  "items": [
+    {
+      "name": "قرمه‌سبزی",
+      "description": "سبزی تازه با گوشت گوسفندی و لوبیا قرمز",
+      "ingredients": [
+        "herbs",
+        "beef",
+        "kidney bean",
+        "dried lime",
+        "oil"
+      ],
+      "allergens": [
+        "legume"
+      ],
+      "diets": [
+        "halal"
+      ],
+      "price": 320000
+    },
+    {
+      "name": "سالاد سزار",
+      "description": "کاهو، مرغ گریل، پارمزان و کروتون",
+      "ingredients": [
+        "lettuce",
+        "chicken",
+        "parmesan",
+        "bread"
+      ],
+      "allergens": [
+        "dairy",
+        "gluten"
+      ],
+      "diets": [],
+      "price": 210000
+    },
+    {
+      "name": "چلوکباب کوبیده",
+      "description": "۲ سیخ گوشت مخلوط با برنج ایرانی",
+      "ingredients": [
+        "beef",
+        "onion",
+        "rice",
+        "salt"
+      ],
+      "allergens": [],
+      "diets": [
+        "halal"
+      ],
+      "price": 360000
+    }
+  ]
+}

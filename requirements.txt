@@ -1,0 +1,18 @@
+numpy==1.26.4
+pandas==2.2.2
+pydantic==2.9.2
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# RAG stack
+langchain==0.3.4
+langchain-community==0.3.3
+langchain-openai==0.2.2
+faiss-cpu==1.12.0
+rank-bm25==0.2.2
+sentence-transformers==3.0.1
+
+# Serving
+fastapi==0.115.2
+uvicorn[standard]==0.30.6
+requests==2.32.3
